@@ -1,34 +1,38 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, Text, View, Image} from 'react-native';
+import {Eduard} from "./src/pages/eduard.js";
+import {Search} from "./src/components/Search.js";
 
-
-
-export default class App extends React.Component{
+export default class App extends Component{
   render (){
-  let pic = {uri:"hello_world/assets/edouard-philippe-le-defi-que-ses-trois-enfants-veulent-le-voir-relever.jpg"}
-
     
-    return (<View style={styles.container}>
-      <Text> j'aime pas les moches </Text>
-      <Image source={pic} style={{width: 193, height: 110}}/>
-      <View style={styles.rond}></View>
-    </View>
-  );}
+    return (
+      <View style={styles.container}>
+        <Text> j'aime pas les moches  </Text>
+        <Search/>
+        <Eduard/> 
+        
+        <View style={styles.rond}></View>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 40,
+    marginVertical: 0,
     backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingTop: 25,
   },
   rond: {
     width: 30, 
     height: 30, 
-    borderRadius: 15, 
+    borderRadius: 1, 
     backgroundColor: "red",
 
   }
+
 });
